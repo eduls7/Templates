@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "OramaUI",
+        "repositoryURL": "https://bitbucket.org/orama_python/ios-lib-design-system/src/main/",
+        "state": {
+          "branch": "develop",
+          "revision": "6604a50c497aff8dce6cab6a8e1884ed9f6bcd91",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
