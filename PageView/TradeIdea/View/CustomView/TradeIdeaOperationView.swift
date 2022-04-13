@@ -1,20 +1,29 @@
 //
-//  TradePushTableViewCell.swift
+//  TradeIdeaOperationView.swift
 //  PageView
 //
-//  Created by Eduardo  on 28/09/21.
+//  Created by Eduardo Lima on 09/02/22.
 //
 
 import UIKit
 import OramaUI
 
-enum EstrategyType: String {
-    case buy = "COMPRA"
-    case sell = "VENDA"
-}
-
-class TradePushEstrategyTableViewCell: UITableViewCell {
+final class TradeIdeaOperationView: UIView {
     // MARK: - Properties
+    private lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView(frame: .zero)
+        scroll.backgroundColor = UIColor(named: .backgroundGray)
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        return scroll
+    }()
+
+    private lazy var contentView: UIView = {
+        let view = UIView() 
+        view.backgroundColor = UIColor(named: .backgroundGray)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private lazy var containerView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .white
@@ -26,7 +35,7 @@ class TradePushEstrategyTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-        
+
     lazy var colorLeftImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -127,17 +136,21 @@ class TradePushEstrategyTableViewCell: UITableViewCell {
         label.textColor = UIColor(named: .darkGraphiteGray)
         return label
     }()
-    
+
     lazy var totalAmountTextField: ORTextField = {
-        let textField = ORTextField(placeholderText: "Valor total")
+        let textField = ORTextField()
+        textField.placeholderAnimationDuration = 0
+        textField.placeholder = "Valor total"
         textField.text = "R$ 1.000,00"
         textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
-    
+
     lazy var quantityTextField: ORTextField = {
-        let textField = ORTextField(placeholderText: "Quantidade")
+        let textField = ORTextField()
+        textField.placeholderAnimationDuration = 0
+        textField.placeholder = "Quantidade"
         textField.text = "100"
         textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -155,28 +168,42 @@ class TradePushEstrategyTableViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     // MARK: - Initializers
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupTopViews()
         setupMiddleViews()
+        setupNotification()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }
 
 // MARK: - Custom Methods
-extension TradePushEstrategyTableViewCell {
-    func setupCell(viewType: EstrategyType) {
+extension TradeIdeaOperationView {
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name:UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
 
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name:UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 }
 
 // MARK: - Actions
-extension TradePushEstrategyTableViewCell {
+extension TradeIdeaOperationView {
     @objc
     private func didTapContinueButton(_ sender: ORButton) {
         NotificationCenter.default.post(
@@ -185,13 +212,32 @@ extension TradePushEstrategyTableViewCell {
         )
     }
 
+    @objc
+    private func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (
+            notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        )?.cgRectValue
+        else {
+            return
+        }
+        self.frame.origin.y = 0 - keyboardSize.height
+    }
+
+    @objc
+    private func keyboardWillHide(notification: NSNotification) {
+        self.frame.origin.y = 0
+    }
+
 }
+
 // MARK: - UISetup
-extension TradePushEstrategyTableViewCell {
+extension TradeIdeaOperationView {
     private func setupTopViews() {
-        contentView.backgroundColor = UIColor(named: .backgroundGray)
+        backgroundColor = UIColor(named: .backgroundGray)
+        self.addSubview(scrollView)
+        scrollView.addSubview(contentView)
         contentView.addSubview(containerView)
-        
+
         containerView.addSubview(colorLeftImageView)
         containerView.addSubview(typeOrderLabel)
         containerView.addSubview(assetImageView)
@@ -200,11 +246,19 @@ extension TradePushEstrategyTableViewCell {
         containerView.addSubview(dividerView)
 
         NSLayoutConstraint.activate([
-            
+
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            scrollView.widthAnchor.constraint(equalTo: widthAnchor),
+
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -76),
 
             colorLeftImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24),
             colorLeftImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),

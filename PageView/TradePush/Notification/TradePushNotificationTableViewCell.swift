@@ -34,9 +34,9 @@ class TradePushNotificationTableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 1
+        label.numberOfLines = 2
         label.textAlignment = .left
-        label.text = "Estratégia solicitada disponível!"
+        label.text = "Estratégia solicitada disponídisponíveldisponíveldisponíveldisponíveldisponívelvel!"
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         //label.textColor = UIColor(hex: "#505152")
         return label
@@ -139,6 +139,7 @@ extension TradePushNotificationTableViewCell {
             stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             
             titleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: notificationBadgeImage.leadingAnchor, constant: -10),
             titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
             
@@ -148,6 +149,7 @@ extension TradePushNotificationTableViewCell {
             notificationBadgeImage.widthAnchor.constraint(equalToConstant: 12),
             
             descriptionLabel.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor),
             descriptionLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor),
             descriptionLabel.bottomAnchor.constraint(equalTo: descriptionView.bottomAnchor),
             

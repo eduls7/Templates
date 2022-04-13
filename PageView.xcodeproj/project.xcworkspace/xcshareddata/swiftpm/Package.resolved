@@ -1,16 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "OramaUI",
-        "repositoryURL": "https://bitbucket.org/orama_python/ios-lib-design-system/src/main/",
-        "state": {
-          "branch": "develop",
-          "revision": "6604a50c497aff8dce6cab6a8e1884ed9f6bcd91",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "ios-lib-commons",
+      "kind" : "remoteSourceControl",
+      "location" : "https://bitbucket.org/orama_python/ios-lib-commons",
+      "state" : {
+        "revision" : "697ff2367d24bdfd577b3b2d860846ef7a2b5735",
+        "version" : "1.0.4"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "main",
+      "kind" : "remoteSourceControl",
+      "location" : "https://bitbucket.org/orama_python/ios-lib-design-system/src/main/",
+      "state" : {
+        "revision" : "d36a9cea591215bffd0d62c09e3872d3d5df7b43",
+        "version" : "1.0.12"
+      }
+    }
+  ],
+  "version" : 2
 }

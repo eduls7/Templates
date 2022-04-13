@@ -1,14 +1,20 @@
-import Foundation
-import UIKit
+//
+//  StockExchangeAlertView.swift
+//  Orama
+//
+//  Created by Eduardo Lima on 14/10/21.
+//  Copyright © 2021 Órama DTVM S/A. All rights reserved.
+//
 
-// MARK: - StockExchangeAlertViewrDelegate
+import UIKit
+import OramaUI
+
 protocol AlertFeedbackDelegate: AnyObject {
-    func dismissAlert()
+    func excludeRecommendation()
 }
 
-// MARK: - Main
-class AlertFeedbackView: UIView {
-    
+final class AlertFeedbackView: UIView {
+    // MARK: - Properties
     private lazy var backView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -23,7 +29,7 @@ class AlertFeedbackView: UIView {
         view.addGestureRecognizer(gestureBackView)
         return view
     }()
-    
+
     private lazy var alertView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +37,7 @@ class AlertFeedbackView: UIView {
         view.layer.cornerRadius = 20
         return view
     }()
-    
+
     private lazy var closeButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +48,7 @@ class AlertFeedbackView: UIView {
 
         return button
     }()
-    
+
     lazy var feedbackAlertImageview: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,38 +56,46 @@ class AlertFeedbackView: UIView {
         imageView.image = image
         return imageView
     }()
-    
-    private lazy var descriptionAlertLabel: UILabel = {
-        let label = UILabel()
+
+    private lazy var descriptionAlertLabel: ORLabel = {
+        let label = ORLabel()
         label.numberOfLines = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont(name: AppFontName.medium, size: 20.0)
-//        label.textColor = .colorPrimary
-        label.text = "Tem certeza que deseja excluir a estratégia 1?"
+//        label.font = UIFont(name: AppFontName.regular, size: 16.0)
+//        label.textColor = UIColor(hex: "#505152")
+        label.text = "Tem certeza que deseja excluir a estratégia?"
         return label
     }()
-    
-    private lazy var confirmButton: UIButton = {
+
+    lazy var confirmButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .red
+//        button.backgroundColor = UIColor(hex: "#E84242")
         button.setTitle("Excluir", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 24.0
+        button.addTarget(
+            self,
+            action: #selector(didTapConfirmButton),
+            for: .touchUpInside
+        )
         return button
     }()
-    
+
     private lazy var cancelButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Cancelar", for: .normal)
-        button.setTitleColor(.gray, for: .normal)
-        button.addTarget(self, action: #selector(closeButtonTouched(_:)), for: .touchUpInside)
+//        button.setTitleColor(UIColor(hex: "#6F7071"), for: .normal)
+        button.addTarget(
+            self,
+            action: #selector(closeButtonTouched(_:)),
+            for: .touchUpInside
+        )
         return button
     }()
-    
-    
+
     weak var delegate: AlertFeedbackDelegate?
 
     override init(frame: CGRect) {
@@ -89,58 +103,10 @@ class AlertFeedbackView: UIView {
         layoutViews()
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layoutViews()
-    }
-
-    func layoutViews() {
-        addSubview(backView)
-        addSubview(alertView)
-        
-        alertView.addSubview(closeButton)
-        alertView.addSubview(feedbackAlertImageview)
-        alertView.addSubview(descriptionAlertLabel)
-        alertView.addSubview(confirmButton)
-        alertView.addSubview(cancelButton)
-        
-        NSLayoutConstraint.activate([
-            backView.topAnchor.constraint(equalTo: topAnchor),
-            backView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            backView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            alertView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            alertView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            alertView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            closeButton.topAnchor.constraint(equalTo: alertView.topAnchor, constant: 32),
-            closeButton.trailingAnchor.constraint(equalTo: alertView.trailingAnchor, constant: -32),
-            closeButton.widthAnchor.constraint(equalToConstant: 13.56),
-            closeButton.heightAnchor.constraint(equalToConstant: 13.55),
-            
-            feedbackAlertImageview.topAnchor.constraint(equalTo: alertView.topAnchor, constant: 79.08),
-            feedbackAlertImageview.centerXAnchor.constraint(equalTo: alertView.centerXAnchor),
-            feedbackAlertImageview.heightAnchor.constraint(equalToConstant: 53.83),
-            feedbackAlertImageview.widthAnchor.constraint(equalToConstant: 60.07),
-            
-            descriptionAlertLabel.topAnchor.constraint(equalTo: feedbackAlertImageview.bottomAnchor, constant: 31.08),
-            //descriptionAlertLabel.centerXAnchor.constraint(equalTo: feedbackAlertImageview.centerXAnchor),
-            descriptionAlertLabel.leadingAnchor.constraint(equalTo: alertView.leadingAnchor, constant: 32),
-            descriptionAlertLabel.trailingAnchor.constraint(equalTo: alertView.trailingAnchor, constant: -32),
-            
-            confirmButton.topAnchor.constraint(equalTo: descriptionAlertLabel.bottomAnchor, constant: 24.0),
-            confirmButton.centerXAnchor.constraint(equalTo: descriptionAlertLabel.centerXAnchor),
-            confirmButton.heightAnchor.constraint(equalToConstant: 48),
-            confirmButton.widthAnchor.constraint(equalToConstant: 155),
-            
-            cancelButton.topAnchor.constraint(equalTo: confirmButton.bottomAnchor, constant: 24),
-            cancelButton.centerXAnchor.constraint(equalTo: confirmButton.centerXAnchor),
-//            cancelButton.heightAnchor.constraint(equalToConstant: 30),
-//            cancelButton.widthAnchor.constraint(equalToConstant: 20),
-            cancelButton.bottomAnchor.constraint(equalTo: alertView.bottomAnchor, constant: -28)
-        ])
-       
     }
 }
 
@@ -148,12 +114,81 @@ class AlertFeedbackView: UIView {
 extension AlertFeedbackView {
     @objc
     private func closeButtonTouched(_ sender: UIButton) {
-        delegate?.dismissAlert()
+
+        NotificationCenter.default.post(
+            name: NSNotification.Name("dismissAlertView.com"),
+            object: nil,
+            userInfo: nil
+        )
     }
-    
+
     @objc
     private func tapGestureRecognizedBackView(sender: UITapGestureRecognizer) {
-        delegate?.dismissAlert()
+        NotificationCenter.default.post(
+            name: NSNotification.Name("dismissAlertView.com"),
+            object: nil,
+            userInfo: nil
+        )
+    }
+
+    @objc
+    func didTapConfirmButton() {
+        delegate?.excludeRecommendation()
+    }
+
+    func setAlertTitle(_ title: String) {
+        descriptionAlertLabel.text = title
+    }
+}
+
+// MARK: - BackViewContraints
+extension AlertFeedbackView {
+    private func layoutViews() {
+        addSubview(backView)
+        addSubview(alertView)
+
+        alertView.addSubview(closeButton)
+        alertView.addSubview(feedbackAlertImageview)
+        alertView.addSubview(descriptionAlertLabel)
+        alertView.addSubview(confirmButton)
+        alertView.addSubview(cancelButton)
+
+        NSLayoutConstraint.activate([
+            backView.topAnchor.constraint(equalTo: topAnchor),
+            backView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+            alertView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            alertView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            alertView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+            closeButton.topAnchor.constraint(equalTo: alertView.topAnchor, constant: 32),
+            closeButton.trailingAnchor.constraint(equalTo: alertView.trailingAnchor, constant: -32),
+            closeButton.widthAnchor.constraint(equalToConstant: 13.56),
+            closeButton.heightAnchor.constraint(equalToConstant: 13.55),
+
+            feedbackAlertImageview.topAnchor.constraint(equalTo: alertView.topAnchor, constant: 79.08),
+            feedbackAlertImageview.centerXAnchor.constraint(equalTo: alertView.centerXAnchor),
+            feedbackAlertImageview.heightAnchor.constraint(equalToConstant: 53.83),
+            feedbackAlertImageview.widthAnchor.constraint(equalToConstant: 60.07),
+
+            descriptionAlertLabel.topAnchor.constraint(
+                equalTo: feedbackAlertImageview.bottomAnchor,
+                constant: 31.08
+            ),
+            descriptionAlertLabel.leadingAnchor.constraint(equalTo: alertView.leadingAnchor, constant: 32),
+            descriptionAlertLabel.trailingAnchor.constraint(equalTo: alertView.trailingAnchor, constant: -32),
+
+            confirmButton.topAnchor.constraint(equalTo: descriptionAlertLabel.bottomAnchor, constant: 24.0),
+            confirmButton.centerXAnchor.constraint(equalTo: descriptionAlertLabel.centerXAnchor),
+            confirmButton.heightAnchor.constraint(equalToConstant: 48),
+            confirmButton.widthAnchor.constraint(equalToConstant: 155),
+
+            cancelButton.topAnchor.constraint(equalTo: confirmButton.bottomAnchor, constant: 24),
+            cancelButton.centerXAnchor.constraint(equalTo: confirmButton.centerXAnchor),
+            cancelButton.bottomAnchor.constraint(equalTo: alertView.bottomAnchor, constant: -28)
+        ])
     }
 }
 

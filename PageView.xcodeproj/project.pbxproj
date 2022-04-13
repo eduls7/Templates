@@ -8,8 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		6235C0B9271F37EB00B05B48 /* TradePushEmpyNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235C0B8271F37EB00B05B48 /* TradePushEmpyNotificationTableViewCell.swift */; };
+		623E83DF27B4606A00DF5CA4 /* TradeIdeaOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E83DE27B4606A00DF5CA4 /* TradeIdeaOperationViewController.swift */; };
+		623E83E127B460A200DF5CA4 /* TradeIdeaOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E83E027B460A200DF5CA4 /* TradeIdeaOperationView.swift */; };
+		625C050727B16924003CF611 /* TradeIdeaMostTradedStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C050627B16924003CF611 /* TradeIdeaMostTradedStockCell.swift */; };
+		625C050A27B302FA003CF611 /* TradeIdeaSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C050927B302FA003CF611 /* TradeIdeaSuccessViewController.swift */; };
+		625C050D27B304DA003CF611 /* TradeIdeaSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C050C27B304DA003CF611 /* TradeIdeaSuccessView.swift */; };
+		625E66E627DBB8FB00C4AF70 /* TradeIdeaConfirmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625E66E527DBB8FB00C4AF70 /* TradeIdeaConfirmModel.swift */; };
 		626AFC3D2717667100A1E6D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626AFC3C2717667100A1E6D4 /* MainViewController.swift */; };
 		626AFC3F2717827F00A1E6D4 /* SSBadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626AFC3E2717827F00A1E6D4 /* SSBadgeButton.swift */; };
+		627C206D27DA6CB600CBE5BD /* TradeIdeaTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C206C27DA6CB600CBE5BD /* TradeIdeaTermViewController.swift */; };
+		627C206F27DA6D1200CBE5BD /* TradeIdeaTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C206E27DA6D1200CBE5BD /* TradeIdeaTermView.swift */; };
+		628EB99927BE8F30003F26A4 /* TradePushEmpyRecommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628EB99827BE8F30003F26A4 /* TradePushEmpyRecommendations.swift */; };
+		6297BEF327AC47D30022630F /* TradeIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6297BEF227AC47D30022630F /* TradeIdeaViewController.swift */; };
+		6297BEF627AC490F0022630F /* TradeIdeaAnalystStrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6297BEF527AC490F0022630F /* TradeIdeaAnalystStrategyCell.swift */; };
+		6297BEF827AC4A420022630F /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6297BEF727AC4A420022630F /* UICollectionViewCell+Extension.swift */; };
+		6297BEFB27AC6E980022630F /* TradeIdeaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6297BEFA27AC6E980022630F /* TradeIdeaHeaderView.swift */; };
 		62EDCAB927455D6C00DE2F9E /* DetailOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EDCAB827455D6C00DE2F9E /* DetailOperationView.swift */; };
 		7183B24E264C6E63003C2524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183B24D264C6E63003C2524 /* AppDelegate.swift */; };
 		7183B250264C6E63003C2524 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183B24F264C6E63003C2524 /* SceneDelegate.swift */; };
@@ -57,8 +70,21 @@
 
 /* Begin PBXFileReference section */
 		6235C0B8271F37EB00B05B48 /* TradePushEmpyNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradePushEmpyNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		623E83DE27B4606A00DF5CA4 /* TradeIdeaOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaOperationViewController.swift; sourceTree = "<group>"; };
+		623E83E027B460A200DF5CA4 /* TradeIdeaOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaOperationView.swift; sourceTree = "<group>"; };
+		625C050627B16924003CF611 /* TradeIdeaMostTradedStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaMostTradedStockCell.swift; sourceTree = "<group>"; };
+		625C050927B302FA003CF611 /* TradeIdeaSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaSuccessViewController.swift; sourceTree = "<group>"; };
+		625C050C27B304DA003CF611 /* TradeIdeaSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaSuccessView.swift; sourceTree = "<group>"; };
+		625E66E527DBB8FB00C4AF70 /* TradeIdeaConfirmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaConfirmModel.swift; sourceTree = "<group>"; };
 		626AFC3C2717667100A1E6D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		626AFC3E2717827F00A1E6D4 /* SSBadgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSBadgeButton.swift; sourceTree = "<group>"; };
+		627C206C27DA6CB600CBE5BD /* TradeIdeaTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaTermViewController.swift; sourceTree = "<group>"; };
+		627C206E27DA6D1200CBE5BD /* TradeIdeaTermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaTermView.swift; sourceTree = "<group>"; };
+		628EB99827BE8F30003F26A4 /* TradePushEmpyRecommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradePushEmpyRecommendations.swift; sourceTree = "<group>"; };
+		6297BEF227AC47D30022630F /* TradeIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaViewController.swift; sourceTree = "<group>"; };
+		6297BEF527AC490F0022630F /* TradeIdeaAnalystStrategyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaAnalystStrategyCell.swift; sourceTree = "<group>"; };
+		6297BEF727AC4A420022630F /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		6297BEFA27AC6E980022630F /* TradeIdeaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeIdeaHeaderView.swift; sourceTree = "<group>"; };
 		62EDCAB827455D6C00DE2F9E /* DetailOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOperationView.swift; sourceTree = "<group>"; };
 		7183B24A264C6E63003C2524 /* PageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7183B24D264C6E63003C2524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +130,100 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		625C050827B30286003CF611 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6297BEF427AC47E80022630F /* Cell */,
+				625C050B27B3049A003CF611 /* CustomView */,
+				6297BEF227AC47D30022630F /* TradeIdeaViewController.swift */,
+				625C050927B302FA003CF611 /* TradeIdeaSuccessViewController.swift */,
+				623E83DE27B4606A00DF5CA4 /* TradeIdeaOperationViewController.swift */,
+				627C206C27DA6CB600CBE5BD /* TradeIdeaTermViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		625C050B27B3049A003CF611 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				625C050C27B304DA003CF611 /* TradeIdeaSuccessView.swift */,
+				623E83E027B460A200DF5CA4 /* TradeIdeaOperationView.swift */,
+				627C206E27DA6D1200CBE5BD /* TradeIdeaTermView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		625C050E27B43170003CF611 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F9A2C17B26F0D8500037FD52 /* Alert.swift */,
+				F9D07D2D27063FC9008E8556 /* AlertEletronicSignatureView.swift */,
+				F951C709270C9D3400BD6039 /* AlertTermView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		625C050F27B43187003CF611 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9A2C17E26F0D87D0037FD52 /* AlertViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		625C051027B436C0003CF611 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F92E3DC426A5E709009C2408 /* UITableViewCell+Extension.swift */,
+				F94CCCA126C182E6008DB68C /* Double+Extension.swift */,
+				6297BEF727AC4A420022630F /* UICollectionViewCell+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		625C051127B436D9003CF611 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F9A2C17D26F0D86A0037FD52 /* Alert */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		625E66E427DBB8E000C4AF70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				625E66E527DBB8FB00C4AF70 /* TradeIdeaConfirmModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6297BEF127AC44F00022630F /* TradeIdea */ = {
+			isa = PBXGroup;
+			children = (
+				625E66E427DBB8E000C4AF70 /* Model */,
+				625C050827B30286003CF611 /* View */,
+				6297BEF927AC6E440022630F /* HeaderView */,
+			);
+			path = TradeIdea;
+			sourceTree = "<group>";
+		};
+		6297BEF427AC47E80022630F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6297BEF527AC490F0022630F /* TradeIdeaAnalystStrategyCell.swift */,
+				625C050627B16924003CF611 /* TradeIdeaMostTradedStockCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6297BEF927AC6E440022630F /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				6297BEFA27AC6E980022630F /* TradeIdeaHeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		7183B241264C6E63003C2524 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +243,7 @@
 		7183B24C264C6E63003C2524 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
+				6297BEF127AC44F00022630F /* TradeIdea */,
 				F96C484727034AD3000B4572 /* TradePush */,
 				F960ECEE265E7BED00E788CC /* Fund */,
 				F92E3DBD26A5E4DF009C2408 /* OnGoingOperations */,
@@ -173,10 +294,9 @@
 		F960ECEF265E7C3800E788CC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F9A2C17D26F0D86A0037FD52 /* Alert */,
+				625C051127B436D9003CF611 /* Components */,
+				625C051027B436C0003CF611 /* Extensions */,
 				F9B0D2D62651F55800BAEA67 /* CodeView.swift */,
-				F92E3DC426A5E709009C2408 /* UITableViewCell+Extension.swift */,
-				F94CCCA126C182E6008DB68C /* Double+Extension.swift */,
 				626AFC3E2717827F00A1E6D4 /* SSBadgeButton.swift */,
 			);
 			path = Helpers;
@@ -209,6 +329,7 @@
 				F96C484E27037134000B4572 /* TradePushEstrategyTableViewCell.swift */,
 				F96C48552704C228000B4572 /* TradePushHeaderTableViewCell.swift */,
 				F96C48572704DB40000B4572 /* TradePushTermTableViewCell.swift */,
+				628EB99827BE8F30003F26A4 /* TradePushEmpyRecommendations.swift */,
 			);
 			path = Push;
 			sourceTree = "<group>";
@@ -216,10 +337,8 @@
 		F9A2C17D26F0D86A0037FD52 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				F9A2C17B26F0D8500037FD52 /* Alert.swift */,
-				F9A2C17E26F0D87D0037FD52 /* AlertViewController.swift */,
-				F9D07D2D27063FC9008E8556 /* AlertEletronicSignatureView.swift */,
-				F951C709270C9D3400BD6039 /* AlertTermView.swift */,
+				625C050F27B43187003CF611 /* Controller */,
+				625C050E27B43170003CF611 /* CustomView */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -300,8 +419,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				628EB99927BE8F30003F26A4 /* TradePushEmpyRecommendations.swift in Sources */,
 				F960ECF1265E7C9100E788CC /* VariableIncomeViewController.swift in Sources */,
+				627C206F27DA6D1200CBE5BD /* TradeIdeaTermView.swift in Sources */,
 				F960ECED265E7BC800E788CC /* VariableIncomeView.swift in Sources */,
+				625C050A27B302FA003CF611 /* TradeIdeaSuccessViewController.swift in Sources */,
 				F92E3DC326A5E613009C2408 /* OnGoingOperationsViewCell.swift in Sources */,
 				F9A2C17C26F0D8500037FD52 /* Alert.swift in Sources */,
 				F96C48582704DB40000B4572 /* TradePushTermTableViewCell.swift in Sources */,
@@ -309,12 +431,16 @@
 				F94CCCA226C182E6008DB68C /* Double+Extension.swift in Sources */,
 				62EDCAB927455D6C00DE2F9E /* DetailOperationView.swift in Sources */,
 				6235C0B9271F37EB00B05B48 /* TradePushEmpyNotificationTableViewCell.swift in Sources */,
+				6297BEF627AC490F0022630F /* TradeIdeaAnalystStrategyCell.swift in Sources */,
 				F96C484F27037134000B4572 /* TradePushEstrategyTableViewCell.swift in Sources */,
+				6297BEF327AC47D30022630F /* TradeIdeaViewController.swift in Sources */,
 				F96A519526558FF600B9B4E2 /* IncomeView.swift in Sources */,
 				F953DFEE2680DE210085A579 /* VariableIncomeQuickTicketConfirmView.swift in Sources */,
 				7183B252264C6E63003C2524 /* FundViewController.swift in Sources */,
 				F961554626A7626C000BDEE8 /* OnGoingOperationsAccountView.swift in Sources */,
 				F96C484B27034B1B000B4572 /* TradePushNotificationTableViewCell.swift in Sources */,
+				627C206D27DA6CB600CBE5BD /* TradeIdeaTermViewController.swift in Sources */,
+				6297BEF827AC4A420022630F /* UICollectionViewCell+Extension.swift in Sources */,
 				F96C484927034AEB000B4572 /* TradePushNotificationViewController.swift in Sources */,
 				F96C48562704C228000B4572 /* TradePushHeaderTableViewCell.swift in Sources */,
 				626AFC3F2717827F00A1E6D4 /* SSBadgeButton.swift in Sources */,
@@ -323,13 +449,19 @@
 				F96C485127037149000B4572 /* TradePushEstrategyViewController.swift in Sources */,
 				F92E3DC526A5E709009C2408 /* UITableViewCell+Extension.swift in Sources */,
 				F9A2C17F26F0D87D0037FD52 /* AlertViewController.swift in Sources */,
+				623E83E127B460A200DF5CA4 /* TradeIdeaOperationView.swift in Sources */,
 				F92E3DBF26A5E512009C2408 /* OnGoingOperationsViewController.swift in Sources */,
+				625C050727B16924003CF611 /* TradeIdeaMostTradedStockCell.swift in Sources */,
 				F951C70A270C9D3400BD6039 /* AlertTermView.swift in Sources */,
 				F9D07D2E27063FC9008E8556 /* AlertEletronicSignatureView.swift in Sources */,
+				6297BEFB27AC6E980022630F /* TradeIdeaHeaderView.swift in Sources */,
+				625E66E627DBB8FB00C4AF70 /* TradeIdeaConfirmModel.swift in Sources */,
 				7183B250264C6E63003C2524 /* SceneDelegate.swift in Sources */,
 				626AFC3D2717667100A1E6D4 /* MainViewController.swift in Sources */,
 				F92E3DC126A5E54F009C2408 /* OnGoingOperationsView.swift in Sources */,
 				F9B0D2D72651F55800BAEA67 /* CodeView.swift in Sources */,
+				623E83DF27B4606A00DF5CA4 /* TradeIdeaOperationViewController.swift in Sources */,
+				625C050D27B304DA003CF611 /* TradeIdeaSuccessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +602,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 66JD29LZZ9;
 				INFOPLIST_FILE = PageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -491,7 +623,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 66JD29LZZ9;
 				INFOPLIST_FILE = PageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,8 +665,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://bitbucket.org/orama_python/ios-lib-design-system/src/main/";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.12;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
